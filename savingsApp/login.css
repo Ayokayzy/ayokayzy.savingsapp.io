@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+#err-msg {
+    color: red;
+}
+
+.err {
+    border: 1px solid red !important;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 300px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: blueviolet;
+    padding: 50px;
+}
