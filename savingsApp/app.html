@@ -1,30 +1,235 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
+
 <body>
-    
-    <label for=""><b>How much do you want to save</b></label>
-    <input type="number" placeholder="Enter an amount" id="amount">
+    <div class="phone">
+        <div class="container mt-5">
+            <div class="row"><i class="fas fa-arrow-left"></i></div>
+            <div class="row">
+                <div class="col-12 d-flex  justify-content-end"><h3 class=""><a href="login.html">log out</a></h3></div></div>
 
-    <h5>How long do you want to save?</h5>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <h6 id="user-name">Hello Kayzy</h6>
+                    <p></p>
+                </div>
+            </div>
+            <div class="amount bg-primary py-2 my-2 rounded-3">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-9">
+                        <h1>Total Savings</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-9">
+                        <h3 id="acct-bal"></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-6">
+                    <div class="bg-secondary rounded-3 p-2">
+                        <i></i>
+                        <h3>withdraw</h3>
+                        <button type="" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdropWithdraw">Select</button>
+                    </div>
 
-    <label for="">Enter start date</label>
-    <input type="date" placeholder="Choose a date" id="date-one">
-    
-    <label for="">Enter end date</label>
-    <input type="date" placeholder="Choose a date" id="date-two">
+                </div>
+                <div class="col-6">
+                    <div class="bg-info rounded-3 p-2">
+                        <i></i>
+                        <h3>deposit</h3>
+                        <button type="" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdropDeposit">Select</button>
+                    </div>
 
-    <button id="save">save</button>
+                </div>
 
-    <h3>Your savings per day is:<span id="savings"></span></h3>
+            </div>
+            <div class="row mb-4">
+                <div class="col-6">
+                    <div class="bg-success rounded-3 p-2">
+                        <i></i>
+                        <h3>goal</h3>
+                        <div class="price">
+                            <p class="text-white">bal:</p>
+                            <h3 id="goal-bal"></h3>
+                        </div>
+                        <button type="" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdropGoal">Select</button>
+                    </div>
 
-    <p><a href="login.html">log out</a></p>
+                </div>
+                <div class="col-6">
+                    <div class="bg-primary rounded-3 p-2">
+                        <i></i>
+                        <h3>flex</h3>
+                        <div class="price">
+                            <p class="text-white">bal:</p>
+                            <h3 id="flex-bal"></h3>
+                        </div>
+                        <button type="" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdropFlex">Select</button>
+                    </div>
+
+                </div>
+
+                <!-- modal area -->
+
+                <!-- withdraw -->
+                <div class="modal fade" id="staticBackdropWithdraw" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title text-dark" id="staticBackdropLabel">withdraw</h2>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" -->
+                                <!-- aria-label="Close"></button> -->
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="text-dark">amount</h3>
+                                <input id="withdraw-fund" type="number">
+                            </div>
+                            <div class="modal-body">
+                                <button type="button" class="btn btn-primary" id="withdraw">withdraw</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- deposit -->
+                <div class="modal fade" id="staticBackdropDeposit" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title text-dark" id="staticBackdropLabel">deposit</h2>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button> -->
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="text-dark">amount</h3>
+                                <input id="depo-fund" type="number">
+                            </div>
+                            <div class="modal-body">
+                                <button type="button" class="btn btn-primary" id="deposit">Deposit</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- flex -->
+                <div class="modal fade" id="staticBackdropFlex" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title text-dark" id="staticBackdropLabel">save</h2>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button> -->
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="text-dark">amount</h3>
+                                <input id="flex-amount" class="mb-4" type="number">
+                                <select name="intervals" id="time-range">
+                                    <option class="option" value="daily">Daily</option>
+                                    <option class="option" value="weekly">Weekly</option>
+                                    <option class="option" value="monthly">Monthly</option>
+                                    <option class="option" value="annualy">Annualy</option>
+                                </select>
+                            </div>
+                            <div class="modal-body">
+                                <button type="button" class="btn btn-primary" id="flex-save" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdropFlex2">Save</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdropFlex2" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title text-dark" id="staticBackdropLabel">save</h2>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button> -->
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="text-dark">you have saved:</h3>
+                                <h1 class="text-dark" id="flex-balance">n </h1>
+                            </div>
+                            <div class="modal-body">
+                                <!-- <button type="button" class="btn btn-primary" id="deposit">Deposit</button> -->
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- goal -->
+                <div class="modal fade" id="staticBackdropGoal" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title text-dark" id="staticBackdropLabel">my goal</h2>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button> -->
+                            </div>
+                            <div class="modal-body">
+                                <label for=""><b>How much do you want to save</b></label>
+                                <input type="number" placeholder="Enter an amount" id="amount">
+
+                                <h3 class="text-dark mt-5">How long do you want to save?</h3>
+
+                                <label for="">Enter start date</label>
+                                <input type="date" placeholder="Choose a date" id="date-one">
+
+                                <label for="">Enter end date</label>
+                                <input type="date" placeholder="Choose a date" id="date-two">
+
+                                <p class="text-dark mt-3">Your savings per day is:<span id="savings"></span>
+                                <p>
+
+                            </div>
+                            <div class="modal-body">
+                                <button type="button" class="btn btn-primary" id="save">Deposit</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-    <script src="script3.js"></script>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+    <script src="script4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

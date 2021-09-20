@@ -1,32 +1,8 @@
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* font default */
-h1 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: capitalize;
-}
-h2 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: capitalize;
-}
-h3 {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: capitalize;
-}
-
-p {
-    font-size: 0.64rem;
-    font-weight: lighter;
 }
 
 .phone {
@@ -58,22 +34,4 @@ p {
     background: #fff;
     left: 70%;
     top: 10px;
-}
-
-.btn {
-    font-size: 0.5rem;
-    padding: 3px;
-    color: #fff;
-}
-
-.btn:hover {
-    color: white;
-}
-
-.modal-sm {
-    width: 230px;
-}
-
-.modal-header, .modal-body, .modal-footer {
-    border: none;
 }
