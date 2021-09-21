@@ -6,30 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>Home</title>
 </head>
 
 <body>
-    <div class="container-fluid body">
+    <div class="phone">
+        <div class="container mt-5">
+            <div class="row"><i class="fas fa-arrow-left"></i></div>
+            <div class="row pt-4">
+                <div class="col-12 d-flex justify-content-end">
+                    <h4 class="m-1 para"> sign up</h4>
+                    <h4 class="m-1 para"><a href="login.html">login</a></h4>
+                </div>
+            </div>
+            <div class="row py-5 my-4">
+                <div class="col-12 d-flex flex-column justify-content-center">
+                    <div id="err-msg" class="my2 text-center"></div>
+                    <form action="'">
+                        <input class="input" type="text" placeholder="Username" name="username">
+                        <input class="input" type="text" placeholder="Fullname" name="fullname">
+                        <input class="input" type="email" placeholder="Email" name="email">
+                        <input class="input" type="password" placeholder="Password" name="password">
+                        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                    </form>
 
-        <h1 class="mb-5">sign up</h1> 
-        <p id="err-msg"></p>      
-        
-        <div class="form-area mx-auto">
-            <form action="" class="form">
-                <!-- <label for="name"><b>Full Name</b></label> -->
-                <input class="input mb-3 d-block" type="text" name="fullname" placeholder="Full Name">
-                <!-- <label for="phone"><b>Phone Number</b> </label> -->
-                <input class="input mb-3 d-block" type="tel" name="phone" placeholder="Phone Number">
-                <!-- <label for="email"><b>Email</b></label> -->
-                <input class="input mb-3 d-block" type="email" name="email" placeholder="Email">
-                <!-- <label for="password"><b>Password</b></label> -->
-                <input class="input mb-3 d-block" type="password" name="password" placeholder="Enter Password">
-                <input id="submit" type="submit" class="justify-content-center">
-            </form>
+                </div>
+            </div>
         </div>
-
-        <p>already have account? <a href="login.html">login</a></p>
     </div>
 
     <script src="./bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>

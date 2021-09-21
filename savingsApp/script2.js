@@ -1,5 +1,7 @@
 const login = document.getElementById("login");
 
+
+
 const loginUser = (event) => {
     event.preventDefault();
 
@@ -9,7 +11,7 @@ const loginUser = (event) => {
 
     let user = localStorage.getItem(name.value);
     if (password.value === user){
-        console.log("login successful")
+        localStorage.setItem("user", password.value)
         window.location = 'app.html';
     }else {
         name.classList.add("err")
@@ -17,6 +19,9 @@ const loginUser = (event) => {
         errMsg.innerHTML = "Enter a valid user"    
     }
 }
+
+
+
 
 
 login.addEventListener("click", loginUser);

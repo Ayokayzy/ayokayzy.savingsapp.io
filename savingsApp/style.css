@@ -2,36 +2,67 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: capitalize;
-}
-
-#err-msg {
-    color: red;
-}
-
-.body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: blueviolet;
-    padding: 50px;
 }
 
 .err {
     border: 1px solid red !important;
 }
 
+#err-msg {
+    color: red;
+}
+
+.para {
+    font-weight: bold;
+}
+
+.phone {
+    position: relative;
+    width: 270px;
+    min-height: 500px;
+    border: 9px solid #000;
+    border-radius: 25px;
+    background: #0dfcc0;
+}
+
+.phone::before {
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 5%;
+    background: #000;
+    left: 20%;
+    top: -1px;
+    border-radius: 0 0 15px 15px;
+}
+
+.phone::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    left: 70%;
+    top: 10px;
+}
+
 .input {
-    width: 300px;
+    background: none;
     border: none;
+    border-bottom: 1px solid #000;
     outline: none;
-    padding: 5px 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.button {
+    width: 120px;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.button:hover {
+    box-shadow: 0 0 2px 1px black;
 }

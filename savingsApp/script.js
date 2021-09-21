@@ -34,6 +34,16 @@ const getFullName = () => {
     return fullName
 }
 
+const getUserName = () => {
+    let userName
+    inputs.forEach(input => {
+        if (input.name === "username") {
+            userName = input.value
+        }
+    })
+    return userName
+}
+
 const getPassword = () => {
     let password
     inputs.forEach(input => {
@@ -44,8 +54,14 @@ const getPassword = () => {
     return password
 }
 
+
+const getAcctBal = () => {
+    const bal = 100000
+    return bal
+}
+
 const confrimNameAndPassword = () => {
-    let user = localStorage.getItem(getFullName())
+    let user = localStorage.getItem(getUserName())
     const errMsg = document.getElementById("err-msg")
     if (user) {
         errMsg.innerHTML = "user already exists, try again."
@@ -53,7 +69,11 @@ const confrimNameAndPassword = () => {
             input.classList.add("err")
         })
     } else {
-        localStorage.setItem(getFullName(), getPassword())
+        localStorage.setItem(getUserName(), getPassword())
+        localStorage.setItem(getPassword(), getFullName())
+        localStorage.setItem(getFullName(), getAcctBal())
+        localStorage.setItem(getPassword()+"_goal", 0.0)
+        localStorage.setItem(getPassword()+"_flex", 0.0)
         window.location = 'success.html';
     }
 }
@@ -61,8 +81,6 @@ const confrimNameAndPassword = () => {
 const confirmReg = (event) => {
     event.preventDefault();
     if (confirmAllFields()) {
-        getFullName();
-        getPassword();
         confrimNameAndPassword()
     }
 }
