@@ -1,8 +1,8 @@
 class UserProfile {
     constructor(userName, acctBalance, flexBal, goalBal) {
         this.userName = userName;
-        this.acctBalance = acctBalance;
-        this.flexBal = flexBal;
+        this.acctBalance = Number(acctBalance);
+        this.flexBal = Number(flexBal);
         this.goalBal = goalBal
     }
 
@@ -32,12 +32,12 @@ class UserProfile {
     }
 
     withdraw = (amount) => {
-        return this.acctBalance - amount
+        return this.acctBalance -= amount
     }
 
     flexDepo = (amount) => {
-        let newBal = Number(this.flexBal) + amount
-        return newBal
+        this.flexBal += amount
+        return this.flexBal
     }
 }
 
@@ -82,11 +82,12 @@ const withdrawFund = () => {
 
 // flex
 let flexSave = document.getElementById("flex-save")
-let flexAmount = document.getElementById("flex-amount").value;
+let reload = document.getElementById("reload")
 
 
 
 const flexCredit = () => {
+    let flexAmount = document.getElementById("flex-amount").value;
     let amount = Number(flexAmount)
     // credit flex account
     localStorage.setItem(profile + "_flex", user.flexDepo(amount));
@@ -127,6 +128,10 @@ const flexApp = () => {
     let myVal = setInterval(flexCredit, getInterval())
 }
 
+const reloadPage = () => {
+    window.location = 'app.html';
+}
+
 
 // goal
 const save = document.getElementById("save");
@@ -157,13 +162,16 @@ const mySavings = () => {
 
 
 
+
+reload.addEventListener("click", reloadPage)
 flexSave.addEventListener("click", flexApp)
 save.addEventListener("click", mySavings);
 deposit.addEventListener("click", depositFund)
 withdraw.addEventListener("click", withdrawFund)
 
-console.log(user.itroduce())
+
+
+
 // localStorage.setItem(user.myName(), 100000)
 // localStorage.setItem(profile + "_flex", 0.0)
-// console.log(typeof(user.myAcctBalance()))
 
